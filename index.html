@@ -8,26 +8,26 @@
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom-factories@1.0.0/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
     <title>Document</title>
 </head>
 <body>
 
     <div id="app"></div>
-    <script type="text/javascript">
+
+    <script type="text/babel">
         class Pet extends React.Component {
             render() {
-                const h2 = ReactDOMFactories.h2(null, "Clifford");
-                const img = ReactDOMFactories.img({
-                    src: "https://vignette.wikia.nocookie.net/animated-video-games-muscular/images/8/85/Clifford.jpg/revision/latest/scale-to-width-down/230?cb=20170219230418",
-                    alt: "dog"
-                });
-
-                return ReactDOMFactories.div(null, h2, img);
+                return (
+                    <div>
+                        <h2>Clifford</h2>
+                        <img src="https://vignette.wikia.nocookie.net/animated-video-games-muscular/images/8/85/Clifford.jpg/revision/latest/scale-to-width-down/230?cb=20170219230418"></img>
+                    </div>
+                )
             }
         }
 
-        ReactDOM.render(React.createElement(Pet), document.getElementById("app"));
+        ReactDOM.render(<Pet/>, document.getElementById("app"));
     </script>
 
 </body>
