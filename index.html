@@ -19,10 +19,16 @@
     <script type="text/babel">
         class Pet extends React.Component {
             render() {
+                const liStyle = {fontSize: '1.5em'}
                 return (
-                    <div>
-                        <h2>Clifford</h2>
+                    <div className="card">
+                        <h2 className="name">Clifford</h2>
                         <img src="https://vignette.wikia.nocookie.net/animated-video-games-muscular/images/8/85/Clifford.jpg/revision/latest/scale-to-width-down/230?cb=20170219230418"></img>
+                        <h5 style={{fontSize: '2em', margin: '2px'}}> Hobbies</h5>
+                        <ul>
+                            <li style={liStyle}>Eat</li>
+                            <li style={liStyle}>Sleep</li>
+                        </ul>
                     </div>
                 )
             }
